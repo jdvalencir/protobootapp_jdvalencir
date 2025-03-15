@@ -61,4 +61,33 @@ public class TestCalculadora {
         Calculadora calc = new Calculadora();
         assertEquals(-64.0, calc.cubo(-4.0), 0);
     }
+    @Test
+    public void testSumaPositivos() {
+        Calculadora calc = new Calculadora();
+        assertEquals(8.0, calc.suma(3.0, 5.0), 0);
+    }
+
+    @Test
+    public void testSumaNegativos() {
+        Calculadora calc = new Calculadora();
+        assertEquals(-9.0, calc.suma(-4.0, -5.0), 0);
+    }
+
+    @Test
+    public void testSumaPositivoNegativo() {
+        Calculadora calc = new Calculadora();
+        assertEquals(1.0, calc.suma(6.0, -5.0), 0);
+    }
+
+    @Test
+    public void testSumaConCero() {
+        Calculadora calc = new Calculadora();
+        assertEquals(4.0, calc.suma(4.0, 0.0), 0);
+    }
+
+    @Test
+    public void testSumaCeroCero() {
+        Calculadora calc = new Calculadora();
+        assertEquals(0.0, calc.suma(0.0, 0.0), 0);
+    }
 }

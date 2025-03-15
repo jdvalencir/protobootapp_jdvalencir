@@ -43,4 +43,10 @@ public class ProtobootappApplication {
         this.calculadora = new Calculadora();
         return String.format("El cubo de %f es %f", numero, this.calculadora.cubo(numero));
     }
+
+    @GetMapping("/suma")
+    public String suma(@RequestParam(value = "numero1", defaultValue = "0") Double numero1, @RequestParam(value = "numero2", defaultValue = "0") Double numero2) {
+        this.calculadora = new Calculadora();
+        return String.format("La suma de %f más %f es %f", numero1, numero2, this.calculadora.suma(numero1, numero2));
+    }
 }
