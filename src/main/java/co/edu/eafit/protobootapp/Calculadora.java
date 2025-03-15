@@ -13,4 +13,8 @@ public class Calculadora {
     public Double suma(Double numero1, Double numero2){
         return numero1 + numero2;
     }
+
+    public Double logaritmo(Dobule numero){
+        return Math.log(numero);
+    }
 }

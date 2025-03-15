@@ -61,5 +61,27 @@ public class HttpRequestTest {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/suma?numero1=5&numero2=7",
                 String.class)).containsPattern("La suma de 5[\\.,]000000 más 7[\\.,]000000 es 12[\\.,]000000");
     }
+    @Test
+    public void testLogaritmoPorDefecto() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/logaritmo",
+                String.class)).containsPattern("El logaritmo natural de 1[\\.,]000000 es 0[\\.,]000000");
+    }
 
+    @Test
+    public void testLogaritmoNumero() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/logaritmo?numero=2.718281828459045",
+                String.class)).containsPattern("El logaritmo natural de 2[\\.,]718282 es 1[\\.,]000000");
+    }
+
+    @Test
+    public void testLogaritmoNumeroGrande() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/logaritmo?numero=10",
+                String.class)).containsPattern("El logaritmo natural de 10[\\.,]000000 es 2[\\.,]302585");
+    }
+
+    @Test
+    public void testLogaritmoInvalido() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/logaritmo?numero=0",
+                String.class)).contains("El logaritmo natural no está definido para números menores o iguales a 0.");
+    }
 }
