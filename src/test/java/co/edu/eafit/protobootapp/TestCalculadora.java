@@ -94,26 +94,26 @@ public class TestCalculadora {
     @Test
     public void testLogaritmoNaturalUno() {
         Calculadora calc = new Calculadora();
-        assertEquals(0.0, calc.logaritmoNatural(1.0), 0.0001);
+        assertEquals(0.0, calc.logaritmo(1.0), 0.0001);
     }
 
     @Test
     public void testLogaritmoNaturalE() {
         Calculadora calc = new Calculadora();
-        assertEquals(1.0, calc.logaritmoNatural(Math.E), 0.0001);
+        assertEquals(1.0, calc.logaritmo(Math.E), 0.0001);
     }
 
     @Test
     public void testLogaritmoNaturalMayorAUno() {
         Calculadora calc = new Calculadora();
-        assertEquals(Math.log(10.0), calc.logaritmoNatural(10.0), 0.0001);
+        assertEquals(Math.log(10.0), calc.logaritmo(10.0), 0.0001);
     }
 
     @Test
     public void testLogaritmoNaturalMenorOIgualCero() {
         Calculadora calc = new Calculadora();
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            calc.logaritmoNatural(0.0);
+            calc.logaritmo(0.0);
         });
         assertEquals("El logaritmo natural no está definido para números menores o iguales a 0.", exception.getMessage());
     }
