@@ -64,7 +64,7 @@ public class TestCalculadora {
     @Test
     public void testSumaPositivos() {
         Calculadora calc = new Calculadora();
-        assertEquals(8.0, calc.suma(3.0, 5.0), 0);
+        assertEquals(1.0, calc.suma(3.0, 5.0), 0);
     }
 
     @Test
