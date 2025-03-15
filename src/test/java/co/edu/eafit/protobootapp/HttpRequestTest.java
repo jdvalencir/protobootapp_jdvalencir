@@ -51,26 +51,15 @@ public class HttpRequestTest {
     }
 
     @Test
-public void testSumaPorDefecto() throws Exception {
-    assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/suma",
-            String.class)).containsPattern("La suma de 0[\\.,]000000 más 0[\\.,]000000 es 0[\\.,]000000");
-}
+    public void testSumaPorDefecto() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/suma",
+                String.class)).containsPattern("La suma de 0[\\.,]000000 más 0[\\.,]000000 es 0[\\.,]000000");
+    }
 
-@Test
-public void testSumaNumeros() throws Exception {
-    assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/suma?numero1=5&numero2=7",
-            String.class)).containsPattern("La suma de 5[\\.,]000000 más 7[\\.,]000000 es 12[\\.,]000000");
-}
+    @Test
+    public void testSumaNumeros() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/suma?numero1=5&numero2=7",
+                String.class)).containsPattern("La suma de 5[\\.,]000000 más 7[\\.,]000000 es 12[\\.,]000000");
+    }
 
-@Test
-public void testSumaPorDefecto() throws Exception {
-    assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/suma",
-            String.class)).containsPattern("La suma de 0[\\.,]000000 más 0[\\.,]000000 es 0[\\.,]000000");
-}
-
-@Test
-public void testSumaNumeros() throws Exception {
-    assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/suma?numero1=5&numero2=7",
-            String.class)).containsPattern("La suma de 5[\\.,]000000 más 7[\\.,]000000 es 12[\\.,]000000");
-}
 }
