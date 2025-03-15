@@ -14,7 +14,7 @@ public class Calculadora {
         return numero1 + numero2;
     }
 
-    public Double logaritmo(Dobule numero){
+    public Double logaritmo(Double numero){
         return Math.log(numero);
     }
 }
