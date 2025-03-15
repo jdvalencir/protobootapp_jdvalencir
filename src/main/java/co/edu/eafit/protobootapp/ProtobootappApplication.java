@@ -47,7 +47,7 @@ public class ProtobootappApplication {
     @GetMapping("/suma")
     public String suma(@RequestParam(value = "numero1", defaultValue = "0") Double numero1, @RequestParam(value = "numero2", defaultValue = "0") Double numero2) {
         this.calculadora = new Calculadora();
-        System.out.println("Hola Prada, Gei");
+        System.out.println("Hola Prada, ya no es Gei");
         return String.format("La suma de %f más %f es %f", numero1, numero2, this.calculadora.suma(numero1, numero2));
     }
 }
