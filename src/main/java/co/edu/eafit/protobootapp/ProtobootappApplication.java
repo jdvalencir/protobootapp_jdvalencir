@@ -50,10 +50,4 @@ public class ProtobootappApplication {
         System.out.println("Hola Prada, ya no es Gei");
         return String.format("La suma de %f más %f es %f", numero1, numero2, this.calculadora.suma(numero1, numero2));
     }
-
-    @GetMapping("/logaritmoN")
-    public String logaritmo(@RequestParam(value = "numero", defaultValue = "0") Double numero) {
-        this.calculadora = new Calculadora();
-        return String.format("El logarimo de %f es %f", numero, this.calculadora.logaritmo(numero));
-    }
 }
